@@ -7,6 +7,7 @@
 /**
  *
  * @author jbjb2
+ * A WarGameMain object represents a card game of War. 
  */
 import java.util.*;
 
@@ -53,6 +54,7 @@ public class WarGameMain {
                 dPlayer.addLast(playerDraw);
             }
 
+            // war happens when the cards' number values are equal
             else {
                 System.out.println("=================================");
                 System.out.println("It's WAR!\n");
@@ -61,6 +63,7 @@ public class WarGameMain {
                 LinkedList<Card> playerDraws = new LinkedList<Card>();
 
                 do {
+                    // computer and user sacrifices 4 cards each time war happens
                     int amountComp = 4;
                     int amountPlayer = 4;
                     if (dComp.getDeckSize() < amountComp) {
@@ -110,6 +113,13 @@ public class WarGameMain {
             }
         }
         
-        System.out.println("\n\nFINISHED");
+        System.out.println("\nFINISHED");
+
+        if (dComp.getDeckSize() == 0) {
+            System.out.println("You won!");
+        }
+        else {
+            System.out.println("The computer won!");
+        }
     }
 }
